@@ -5,8 +5,6 @@ public class TrainingPerson implements Observable{
 
     private List<Observer> observers = new ArrayList<>();
     private String training;
-    private Boolean lieDown;
-    private Boolean standUp;
 
     @Override
     public void subscribe(Observer observer) {
@@ -34,21 +32,6 @@ public class TrainingPerson implements Observable{
 
     public void setExersise(ExersiseFactory training) {
         this.training = training.getName();
-        this.notifyObservers();
-    }
-    public void standUp() {
-//        System.out.println("Stand up...");
-        this.training = "Stand up";
-        this.standUp = true;
-        this.lieDown = false;
-        this.notifyObservers();
-    }
-
-    public void lieDown() {
-//        System.out.println("Lie down...");
-        this.training = "Lie down";
-        this.standUp = false;
-        this.lieDown = true;
         this.notifyObservers();
     }
 }
