@@ -32,10 +32,10 @@ public class TrainingPerson implements Observable{
         return this.training;
     }
 
-//    public void setExersise(ExersiseFactory training) {
-//        this.training = training.getName();
-//        this.notifyObservers();
-//    }
+    public void setExersise(ExersiseFactory training) {
+        this.training = training.getName();
+        this.notifyObservers();
+    }
     public void standUp() {
 //        System.out.println("Stand up...");
         this.training = "Stand up";

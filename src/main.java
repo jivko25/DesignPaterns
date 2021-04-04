@@ -5,10 +5,10 @@ public class main {
         Observer obs1 = new Spectator("Spectator 01");
         Observer obs2 = new Spectator("Spectator 02");
         Observer obs3 = new Spectator("Spectator 03");
-        Command standUp = new StandUpCommand(training);
-        Command lieDown = new LieDownCommand(training);
-//        ExersiseFactory standUp = new ExersiseFactory("Stand up!");
-//        ExersiseFactory lieDown = new ExersiseFactory("Lie down!");
+        ExersiseFactory standUpExersise = new ExersiseFactory("Stand up!");
+        ExersiseFactory lieDownExersise = new ExersiseFactory("Lie donw!");
+        Command standUp = new ExeciteCommand(training, standUpExersise);
+        Command lieDown = new ExeciteCommand(training, lieDownExersise);
 
         training.subscribe(obs1);
         training.subscribe(obs2);
@@ -19,7 +19,5 @@ public class main {
 
         trainer.setCommand(lieDown);
         trainer.setNewExersise();
-
-//        training.setExersise();
     }
 }
